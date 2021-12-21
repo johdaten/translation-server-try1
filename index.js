@@ -8,7 +8,7 @@ app.use(cors())
 dotenv.config()
 
 let port = process.env.PORT || 3001
-mongoose.connect('mongodb+srv://startup:j089984875@pedidos.lko1p.mongodb.net/translation?retryWrites=true&w=majority')
+mongoose.connect(process.env.DATABASE_URL)
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to the Database'))
