@@ -1,9 +1,13 @@
 import express from 'express'
-import 'path'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import ordersRouter from './routes/orders.js'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 const app = express()
 app.use(cors())
 dotenv.config()
